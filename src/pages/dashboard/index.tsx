@@ -9,7 +9,7 @@ export default function Dashboard() {
       <Header />
 
       <Flex w="100%" my="6" maxW={1480} mx="auto" px="6 ">
-        <Sidebar></Sidebar>
+        <Sidebar />
       </Flex>
     </Flex>
   );
