@@ -13,13 +13,21 @@ export const SidebarNav = () => {
   return (
     <Stack spacing="12" align="flex-start">
       <NavSection title="GERAL">
-        <NavLink icon={RiDashboardLine}>Dashboard</NavLink>
-        <NavLink icon={RiContactsLine}>Usuarios</NavLink>
+        <NavLink href="/dashboard" icon={RiDashboardLine}>
+          Dashboard
+        </NavLink>
+        <NavLink href="/users" icon={RiContactsLine}>
+          Usuarios
+        </NavLink>
       </NavSection>
 
       <NavSection title="AUTOMACAO">
-        <NavLink icon={RiInputMethodLine}>Formularios</NavLink>
-        <NavLink icon={RiGitMergeLine}>Automacao</NavLink>
+        <NavLink href="/forms" icon={RiInputMethodLine}>
+          Formularios
+        </NavLink>
+        <NavLink href="/automation" icon={RiGitMergeLine}>
+          Automacao
+        </NavLink>
       </NavSection>
     </Stack>
   );
