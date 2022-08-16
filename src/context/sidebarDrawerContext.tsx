@@ -18,7 +18,8 @@ export const SidebarDrawerProvider = ({
 
   useEffect(() => {
     disclosure.onClose();
-  }, [asPath, disclosure]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [asPath]);
 
   return (
     <SidebarDrawerContext.Provider value={disclosure}>
