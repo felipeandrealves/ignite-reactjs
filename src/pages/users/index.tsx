@@ -15,6 +15,7 @@ import {
   useBreakpointValue,
 } from "@chakra-ui/react";
 import { RiAddLine, RiPencilLine } from "react-icons/ri";
+import { useQuery } from "@tanstack/react-query";
 
 import { Sidebar } from "../../components/sidebar";
 import { Header } from "../../components/header";
@@ -22,7 +23,16 @@ import { Pagination } from "../../components/pagination";
 import Link from "next/link";
 
 export default function UserList() {
+  const { data, isLoading, error } = useQuery(["users"], async () => {
+    const response = await fetch("http://localhost:3000/api/users");
+    const data = await response.json();
+
+    return data;
+  });
+
   const isWideVersion = useBreakpointValue({ base: false, lg: true });
+
+  console.log(data);
 
   return (
     <Box>
