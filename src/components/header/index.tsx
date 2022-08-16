@@ -31,7 +31,7 @@ export const Header = () => {
           fontSize="24"
           variant="unstyled"
           mr="2"
-        ></IconButton>
+        />
       )}
 
       <Logo />
