@@ -33,12 +33,13 @@ export function makeServer() {
     },
 
     routes() {
-      this.namespace = "mirage";
+      this.namespace = "api";
       this.timing = 750;
 
       this.get("/users");
       this.post("/users");
 
+      this.namespace = "";
       this.passthrough();
     },
   });
