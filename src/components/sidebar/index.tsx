@@ -10,8 +10,7 @@ import {
 } from "@chakra-ui/react";
 import { useSidebarDrawer } from "../../context/sidebarDrawerContext";
 
-import { NavSection } from "./navSection";
-import { NavLink } from "./navLink";
+import { SidebarNav } from "./sidebarNav";
 
 export const Sidebar = () => {
   const { isOpen, onClose } = useSidebarDrawer();
@@ -37,17 +36,7 @@ export const Sidebar = () => {
 
   return (
     <Box as="aside" w="64" mr="8">
-      <Stack spacing="12" align="flex-start">
-        <NavSection title="GERAL">
-          <NavLink icon={RiDashboardLine}>Dashboard</NavLink>
-          <NavLink icon={RiContactsLine}>Usuarios</NavLink>
-        </NavSection>
-
-        <NavSection title="AUTOMACAO">
-          <NavLink icon={RiInputMethodLine}>Formularios</NavLink>
-          <NavLink icon={RiGitMergeLine}>Automacao</NavLink>
-        </NavSection>
-      </Stack>
+      <SidebarNav />
     </Box>
   );
 };
