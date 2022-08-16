@@ -4,51 +4,24 @@ import {
   RiGitMergeLine,
   RiInputMethodLine,
 } from "react-icons/ri";
-import { Box, Icon, Link, Stack, Text } from "@chakra-ui/react";
+import { Box, Stack } from "@chakra-ui/react";
+
+import { NavSection } from "./navSection";
+import { NavLink } from "./navLink";
 
 export const Sidebar = () => {
   return (
     <Box as="aside" w="64" mr="8">
       <Stack spacing="12" align="flex-start">
-        <Box>
-          <Text fontWeight="bold" color="gray.400" fontSize="smal">
-            GERAL
-          </Text>
-          <Stack spacing="4" mt="8" align="stretch">
-            <Link display="flex" alignItems="center">
-              <Icon as={RiDashboardLine} fontSize="20" />
-              <Text ml="4" fontWeight="medium">
-                Dashboard
-              </Text>
-            </Link>
-            <Link display="flex" alignItems="center">
-              <Icon as={RiContactsLine} fontSize="20" />
-              <Text ml="4" fontWeight="medium">
-                Ususarios
-              </Text>
-            </Link>
-          </Stack>
-        </Box>
+        <NavSection title="GERAL">
+          <NavLink icon={RiDashboardLine}>Dashboard</NavLink>
+          <NavLink icon={RiContactsLine}>Usuarios</NavLink>
+        </NavSection>
 
-        <Box>
-          <Text fontWeight="bold" color="gray.400" fontSize="smal">
-            AUTOMACAO
-          </Text>
-          <Stack spacing="4" mt="8" align="stretch">
-            <Link display="flex" alignItems="center">
-              <Icon as={RiInputMethodLine} fontSize="20" />
-              <Text ml="4" fontWeight="medium">
-                Formularios
-              </Text>
-            </Link>
-            <Link display="flex" alignItems="center">
-              <Icon as={RiGitMergeLine} fontSize="20" />
-              <Text ml="4" fontWeight="medium">
-                Automacao
-              </Text>
-            </Link>
-          </Stack>
-        </Box>
+        <NavSection title="AUTOMACAO">
+          <NavLink icon={RiInputMethodLine}>Formularios</NavLink>
+          <NavLink icon={RiGitMergeLine}>Automacao</NavLink>
+        </NavSection>
       </Stack>
     </Box>
   );
